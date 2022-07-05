@@ -1,4 +1,5 @@
-import { PlusCircle, Trash } from "phosphor-react";
+import { PlusCircle } from "phosphor-react";
+import { TaskItem } from "./components/TaskItem";
 import logoUrl from "./images/Logo.svg";
 import * as S from "./styles/App";
 
@@ -37,16 +38,7 @@ export default function App() {
 
       <S.Container>
         <S.TasksList>
-          <S.TaskItem>
-            <input type="checkbox" />
-            <p>
-              Integer urna interdum massa libero auctor neque turpis turpis
-              semper. Duis vel sed fames integer.
-            </p>
-            <button>
-              <Trash />
-            </button>
-          </S.TaskItem>
+          <TaskItem />
         </S.TasksList>
       </S.Container>
     </>
