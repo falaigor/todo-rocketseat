@@ -1,7 +1,9 @@
 import { Form } from "./components/Form";
 import { TaskItem } from "./components/TaskItem";
-import logoUrl from "./images/Logo.svg";
 import * as S from "./styles/App";
+
+import logoUrl from "./images/Logo.svg";
+import { NotTasks } from "./components/NotTasks";
 
 export default function App() {
   return (
@@ -29,6 +31,7 @@ export default function App() {
 
       <S.Container>
         <S.TasksList>
+          <NotTasks />
           <TaskItem />
         </S.TasksList>
       </S.Container>
