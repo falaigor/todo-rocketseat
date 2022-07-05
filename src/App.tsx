@@ -1,4 +1,4 @@
-import { PlusCircle } from "phosphor-react";
+import { Form } from "./components/Form";
 import { TaskItem } from "./components/TaskItem";
 import logoUrl from "./images/Logo.svg";
 import * as S from "./styles/App";
@@ -10,16 +10,7 @@ export default function App() {
         <img src={logoUrl} alt="logo" />
       </S.Header>
       <S.Container>
-        <S.Form>
-          <S.Input
-            type="text"
-            value=""
-            placeholder="Adicione uma nova tarefa"
-          />
-          <S.Button type="button">
-            Criar <PlusCircle weight="bold" style={{ marginLeft: "4px" }} />
-          </S.Button>
-        </S.Form>
+        <Form />
       </S.Container>
 
       <S.Container>
