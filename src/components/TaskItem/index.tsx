@@ -1,25 +1,23 @@
-import { useState } from "react";
 import { Check, Trash } from "phosphor-react";
 import * as S from "./styles";
+import { TaskProps } from "../../App";
 
-export const TaskItem = () => {
-  const [isComplete, setIsComplete] = useState(false);
+interface TaskItemProps {
+  task: TaskProps;
+  removeTask: () => void;
+  completeTask: () => void;
+}
 
+export const TaskItem = ({ task, removeTask, completeTask }: TaskItemProps) => {
   return (
-    <S.TaskItem active={isComplete}>
-      <S.Complete
-        active={isComplete}
-        onClick={() => setIsComplete(!isComplete)}
-      >
-        {isComplete && <Check weight="bold" />}
+    <S.TaskItem active={task.isComplete}>
+      <S.Complete active={task.isComplete} onClick={() => completeTask()}>
+        {task.isComplete && <Check weight="bold" />}
       </S.Complete>
 
-      <p>
-        Integer urna interdum massa libero auctor neque turpis turpis semper.
-        Duis vel sed fames integer.
-      </p>
+      <p>{task.title}</p>
 
-      <S.Trash>
+      <S.Trash onClick={() => removeTask()}>
         <Trash />
       </S.Trash>
     </S.TaskItem>

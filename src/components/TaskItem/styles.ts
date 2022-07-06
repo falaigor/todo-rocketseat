@@ -15,6 +15,8 @@ export const TaskItem = styled.div<CompleteProps>`
   p {
     flex: 2;
     padding: 0 12px;
+    display: flex;
+    align-items: center;
     color: ${({ active }) => (active ? "var(--gray-300)" : "var(--white)")};
     font-style: ${({ active }) => (active ? "oblique" : "normal")};
     text-decoration: ${({ active }) => (active ? "line-through" : "none")};
