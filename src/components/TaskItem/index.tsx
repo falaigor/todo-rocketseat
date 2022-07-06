@@ -1,17 +1,27 @@
-import { Trash } from "phosphor-react";
+import { useState } from "react";
+import { Check, Trash } from "phosphor-react";
 import * as S from "./styles";
 
 export const TaskItem = () => {
+  const [isComplete, setIsComplete] = useState(false);
+
   return (
-    <S.TaskItem>
-      <input type="checkbox" />
+    <S.TaskItem active={isComplete}>
+      <S.Complete
+        active={isComplete}
+        onClick={() => setIsComplete(!isComplete)}
+      >
+        {isComplete && <Check weight="bold" />}
+      </S.Complete>
+
       <p>
         Integer urna interdum massa libero auctor neque turpis turpis semper.
         Duis vel sed fames integer.
       </p>
-      <button>
+
+      <S.Trash>
         <Trash />
-      </button>
+      </S.Trash>
     </S.TaskItem>
   );
 };

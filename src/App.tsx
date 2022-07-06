@@ -6,6 +6,20 @@ import logoUrl from "./images/Logo.svg";
 import { NotTasks } from "./components/NotTasks";
 
 export default function App() {
+  const tasks = [
+    {
+      id: self.crypto.randomUUID(),
+      title: "Terminar desafio",
+      isComplete: false,
+    },
+    {
+      id: self.crypto.randomUUID(),
+      title: "Estudar Vite",
+      isComplete: false,
+    },
+  ];
+
+  console.log(tasks);
   return (
     <>
       <S.Header>
@@ -31,8 +45,7 @@ export default function App() {
 
       <S.Container>
         <S.TasksList>
-          <NotTasks />
-          <TaskItem />
+          {tasks.length !== 0 ? <TaskItem /> : <NotTasks />}
         </S.TasksList>
       </S.Container>
     </>
